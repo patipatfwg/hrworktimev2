@@ -188,9 +188,9 @@
                                             <tbody>
                                             <?php
                                                 // $urlPROD = "http://freewillmdc.loginto.me/hrworktime/getJSON_getData.php?"."in_date=".$in_date."&"."out_date=".$out_date;
-                                                $urlPROD = "http://freewillmdc.loginto.me/hrworktime/getJSON_getData.php?"."in_date=".$in_date."&"."out_date=".$out_date;
-                                                $urlDEV = "http://127.0.0.1/hrworktime/api/getJSON_getData.php?"."in_date=".$in_date."&"."out_date=".$out_date;
-                                                $json = file_get_contents($urlDEV);
+                                                $urlPROD = "http://freewillmdc.loginto.me/hrworktimev2/api/getJSON_getData.php?"."in_date=".$in_date."&"."out_date=".$out_date;
+                                                $urlDEV = "http://127.0.0.1/hrworktimev2/api/getJSON_getData.php?"."in_date=".$in_date."&"."out_date=".$out_date;
+                                                $json = file_get_contents($urlPROD);
                                                 $results = json_decode($json,true);  
                                                 foreach ($results as $key => $value) {
                                                     $a = $value["employee_id"];
