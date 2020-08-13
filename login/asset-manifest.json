@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/hrworktimev2/login/static/css/main.8cacf8de.chunk.css",
+    "main.js": "/hrworktimev2/login/static/js/main.575c1536.chunk.js",
+    "main.js.map": "/hrworktimev2/login/static/js/main.575c1536.chunk.js.map",
+    "runtime-main.js": "/hrworktimev2/login/static/js/runtime-main.2956d265.js",
+    "runtime-main.js.map": "/hrworktimev2/login/static/js/runtime-main.2956d265.js.map",
+    "static/css/2.f3cffc9e.chunk.css": "/hrworktimev2/login/static/css/2.f3cffc9e.chunk.css",
+    "static/js/2.8cb986af.chunk.js": "/hrworktimev2/login/static/js/2.8cb986af.chunk.js",
+    "static/js/2.8cb986af.chunk.js.map": "/hrworktimev2/login/static/js/2.8cb986af.chunk.js.map",
+    "index.html": "/hrworktimev2/login/index.html",
+    "precache-manifest.94d04b7ebd26b8da0d7f38f4d28ca2ff.js": "/hrworktimev2/login/precache-manifest.94d04b7ebd26b8da0d7f38f4d28ca2ff.js",
+    "service-worker.js": "/hrworktimev2/login/service-worker.js",
+    "static/css/2.f3cffc9e.chunk.css.map": "/hrworktimev2/login/static/css/2.f3cffc9e.chunk.css.map",
+    "static/css/main.8cacf8de.chunk.css.map": "/hrworktimev2/login/static/css/main.8cacf8de.chunk.css.map",
+    "static/js/2.8cb986af.chunk.js.LICENSE.txt": "/hrworktimev2/login/static/js/2.8cb986af.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2956d265.js",
+    "static/css/2.f3cffc9e.chunk.css",
+    "static/js/2.8cb986af.chunk.js",
+    "static/css/main.8cacf8de.chunk.css",
+    "static/js/main.575c1536.chunk.js"
+  ]
+}
