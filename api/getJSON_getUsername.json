@@ -1,0 +1,27 @@
+{
+    "user" : [
+        {
+            "username" : "hrfreewill001",
+            "password" : "aHJmd2dAZnJlZXdpbGw=",
+            "status" : "hr"
+        },
+        {
+            "username" : "hrfreewill002",
+            "password" : "aHJmd2dAZnJlZXdpbGw=",
+            "status" : "hr"
+
+        },
+        {
+            "username" : "hrfreewill003",
+            "password" : "aHJmd2dAZnJlZXdpbGw=",
+            "status" : "hr"
+
+        },
+        {
+            "username" : "mdcfreewill001",
+            "password" : "aHJmd2dAZnJlZXdpbGw=",
+            "status" : "mdc"
+
+        }
+    ]
+}
