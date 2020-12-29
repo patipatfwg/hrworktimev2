@@ -19,7 +19,7 @@ if ($conn->connect_error) {
 
 $tmp_username = $_REQUEST['username'];
 
-$tmp_password = base64_encode($_REQUEST['password']);
+$tmp_password = $_REQUEST['password'];
 
 $sql = "SELECT * FROM user WHERE username = '$tmp_username' AND password = '$tmp_password'";
 

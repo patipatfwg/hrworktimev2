@@ -1,10 +1,11 @@
 import React from 'react';
+import axios from "axios";
 import './Loginscreen.css';
 import banner_fwg from "./banner_fwg.png";
 import myUsers from './data/getJSON_getUsername.json';
 import 'bootstrap/dist/css/bootstrap.css';
 import $ from 'jquery'; 
-import base64 from 'react-native-base64';
+import {decode as base64_decode, encode as base64_encode} from 'base-64';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { faKey } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -13,8 +14,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 class LoginForm extends React.Component {
   LoginMain = () =>
   {
-    var username_val = $("#username").val();
-    var password_val = $("#password").val(); 
+    var username_val = base64_encode( $("#username").val() );
+    var password_val = base64_encode( $("#password").val() ); 
 
     if(username_val==="" || password_val==="")
     {
@@ -23,22 +24,32 @@ class LoginForm extends React.Component {
     }
     else
     {
-      var DataStatus;
-      var FLAG_CHECK_WARNING;
-      var FLAG_CHECK_FINISH="0";
-      var url = '../dashboard/main.php';
-      myUsers.map( (data) => {
-        if( username_val===data.username && password_val===base64.decode(data.password) )
-        {
-          FLAG_CHECK_WARNING = "0";
-          FLAG_CHECK_FINISH = "1";
-          return DataStatus = data.status;
-        }
-        else
-        {
-          return FLAG_CHECK_WARNING = "1";
-        }
-      })
+
+      try {
+        const response = axios.post('http://freewillmdc.loginto.me/hrworktimev2/api/callAPI_login.php', { username:username_val ,password:password_val  });
+        console.log('👉 Returned data:', response);
+
+        var DataStatus;
+        var FLAG_CHECK_WARNING;
+        var FLAG_CHECK_FINISH="0";
+        var url = '../dashboard/main.php';
+        response.map( (data) => {
+          // if( username_val===data.username && password_val===base64.decode(data.password) )
+            if( data.code===200 )
+            {
+              FLAG_CHECK_WARNING = "0";
+              FLAG_CHECK_FINISH = "1";
+              return DataStatus = data.status;
+            }
+            else
+            {
+              return FLAG_CHECK_WARNING = "1";
+            }
+        })
+
+      } catch (e) {
+        console.log(`😱 Axios request failed: ${e}`);
+      }
     }
     
     if(FLAG_CHECK_WARNING==="1" && FLAG_CHECK_FINISH==="0")  
@@ -55,6 +66,7 @@ class LoginForm extends React.Component {
     }
 
   }
+
   handleKeyPress = (e) => {
     if (e.key === "Enter") {
       const { onAccept } = this.props;
@@ -62,6 +74,9 @@ class LoginForm extends React.Component {
       this.LoginMain()
     }
   }
+
+
+
   render() {
     return (
       <section className="section container">
